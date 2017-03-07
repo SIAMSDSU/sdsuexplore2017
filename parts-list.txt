@@ -1,0 +1,10 @@
+Thermocouple Breakout board: https://www.amazon.com/CTYRZCH-MAX6675-Thermocouple-Temperature-0-1024/dp/B015YZZOHY/ ($12.99 ea)
+Nano Arduino (knockoff): https://www.amazon.com/KOOKYE-ATMEGA328P-Module-Micro-controller-Arduino/dp/B019SXND4O/ ($19.99 for 5 boards)
+Breadboard: https://www.amazon.com/Aketek-Solderless-BreadBoard-tie-points-power/dp/B01258UZMC ($8.99 for 3 boards)
+usb A to usb mini B cable, 6': https://www.amazon.com/MANHATTAN-6-Feet-Hi-Speed-Translucent-333412/dp/B0007OWNYK/ ($4.00)
+
+Price for two setups: 
+
+$13+$4+$3+$4 = $24 (per setup)
+
+$24*2 = $48
