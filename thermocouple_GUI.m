@@ -136,6 +136,7 @@ function getData()
             xlabel('Time (s)');
             ylabel('Temperature ($\circ$F)');
             title('Temperature over Time');
+            set(gca,'FontSize',15);
             drawnow;
             i=i+1;
         end
@@ -166,6 +167,7 @@ function fitData(fncell,nfuns)
     xlabel('Time (s)');
     ylabel('Temperature ($\circ$F)');
     title('Temperature over Time');
+    set(gca,'FontSize',15);
     hold on;
     plot(time(1:nlen),fitvals,'r');
     legend({'Measurements';sprintf('Fit: AIC=%.5e',AIC)});
