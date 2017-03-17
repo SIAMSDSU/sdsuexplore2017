@@ -132,7 +132,7 @@ function getData()
             data(i)=dubble;
             time(i)=toc; 
             plot(time(1:i),data(1:i),'.-');
-            ylim([32,110]);
+            ylim([65,105]);
             xlabel('Time (s)');
             ylabel('Temperature ($\circ$F)');
             title('Temperature over Time');
@@ -140,6 +140,7 @@ function getData()
             drawnow;
             i=i+1;
         end
+        pause(0.25);
     end
 end
 
@@ -155,6 +156,11 @@ function fitData(fncell,nfuns)
     end
     Y=data(1:nlen);
     params=(X'*X)\(X'*Y);
+    fnstr='';
+    for fnix=2:nfuns+1
+        fnstr=sprintf('%s+%.2f(%s)',fnstr,params(fnix),fncell{fnix-1}{1});
+    end
+    fnstr=sprintf('%s+%.2f',fnstr,params(1));
     fitvals=X*params;
     err=Y-fitvals;
     SSE=err'*err;% SSE=RSS
@@ -163,14 +169,14 @@ function fitData(fncell,nfuns)
     figure(fg2);
     clf;
     plot(time(1:nlen),data(1:nlen),'.');
-    ylim([32,110]);
+    ylim([65,105]);
     xlabel('Time (s)');
     ylabel('Temperature ($\circ$F)');
     title('Temperature over Time');
     set(gca,'FontSize',15);
     hold on;
     plot(time(1:nlen),fitvals,'r');
-    legend({'Measurements';sprintf('Fit: AIC=%.5e',AIC)});
+    legend({'Measurements';sprintf('Fit: %s\nError=%.2f\nAIC=%.5e',fnstr,SSE,AIC)},'Location','SouthEast');
     hold off;
     drawnow;
 end
